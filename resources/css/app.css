@@ -1,0 +1,16 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "custom.css";
+
+@font-face {
+    font-family: 'Saira Condensed';
+    src: url(./../fonts/SairaCondensed-Regular.ttf);
+    
+}
+
+@font-face {
+    font-family: 'Sarabun';
+    src: url(./../fonts/Sarabun-Regular.ttf);
+}
