@@ -64,7 +64,7 @@ get_header();
                         <div class="flex flex-col px-4">
                             <div class="flex flex-col text-lg text-gray-900 dark:text-gray-300">
                                 <?php the_title('<h3 class="font-sarabun mt-5 font-extrabold text-2xl text-left dark:text-gray-300 tracking-wide">', '</h3>'); ?>
-                                <div class="mt-5">
+                                <div class="line-clamp-6 mt-5">
                                     <?php the_excerpt(); ?>
                                 </div>
                             </div>
@@ -208,7 +208,9 @@ get_header();
                             <div class="flex flex-row">
                                 <div class="w-12/12 dark:text-gray-300">
                                     <?php the_title('<h3 class="hover:underline font-sarabun font-bold mb-2 dark:text-gray-300">', '</h3>'); ?>
-                                    <?php the_excerpt(); ?>
+                                    <div class="line-clamp-4">
+                                        <?php the_excerpt(); ?>
+                                    </div>
                                 </div>
                             </div>
                         </a>

@@ -101,14 +101,6 @@ if (! function_exists('ink_asset')) {
     }
 }
 
-if (! function_exists('limit_excerpt_length')) {
-    // Limit excerpt length to 25 words
-    function limit_excerpt_length() {
-        return 25;
-    }
-}
-add_filter('excerpt_length', 'limit_excerpt_length');
-
 if (! function_exists('excerpt_more_notation')) {
     // Notation for read more in excerpt
     function excerpt_more_notation() {
