@@ -68,7 +68,7 @@ get_header();
                 </div>
             </div>
 
-            <div class="flex flex-col mx-4 mb-4">
+            <div class="flex flex-col mx-4 mb-4 space-y-10">
                 <?php function comments_walker() {?>
                 <figure class="flex flex-col" id="comment-<?php comment_ID(); ?>">
                     <div class="flex flex-row gap-4 mb-4">
@@ -76,7 +76,7 @@ get_header();
                             <?php
                                 $authorEmail = get_comment_author_email();
                                 $gravatar = get_avatar($authorEmail);
-                                $gravatarUrl = esc_url(home_url() . '/wp-content/uploads/2024/02/gravatar_400x400.png');
+                                $gravatarUrl = esc_url(home_url() . '/wp-content/themes/ink/resources/img/gravatar_400x400.png');
 
                                 if ($gravatar) $gravatarUrl = $gravatar;
                             ?>
@@ -107,20 +107,22 @@ get_header();
                             'add_below' => true,
                             'depth' => 20,
                             'max_depth' => 200,
-                            'before' => '<a href="#" class="underline font-sarabun dark:text-gray-300">Reply',
-                            'after' => '</a>',
                         ]);
-                    ?>
+                    ?> 
                 </figure>
                 <?php } ?>
                 
                 <?php
+                    $comments = get_comments([
+                        'post_id' => get_the_ID(),
+                    ]);
+
                     wp_list_comments([
                         'type' => 'comment',
                         'reverse_top_level' => true,
                         'max_depth' => 20,
                         'callback' => 'comments_walker',
-                    ]);
+                    ], $comments);
                 ?>
             </div>
         </div>
