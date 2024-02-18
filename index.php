@@ -53,7 +53,7 @@ get_header();
                 </div>
                 <div>
                     <div class="h-5 mt-2">
-                        <h2 class="font-saira font-bold text-xl dark:text-gray-200">Featured Article</h2>
+                        <h2 class="font-saira font-bold text-xl dark:text-gray-200"><?php _e('Featured Article', 'ink'); ?></h2>
                     </div>
                 </div>
             </div>
@@ -152,7 +152,7 @@ get_header();
                     </div>
                     <div>
                         <div class="h-5 mt-2">
-                            <h2 class="font-saira font-bold text-xl dark:text-gray-200">Latest Articles</h2>
+                            <h2 class="font-saira font-bold text-xl dark:text-gray-200"><?php _e('Latest Articles', 'ink'); ?></h2>
                         </div>
                     </div>
                 </div>
@@ -191,7 +191,7 @@ get_header();
                     </div>
                     <div>
                         <div class="h-5 mt-2">
-                            <h2 class="font-saira font-bold text-xl dark:text-gray-200">Tips & Snippets</h2>
+                            <h2 class="font-saira font-bold text-xl dark:text-gray-200"><?php _e('Tips & Snippets', 'ink'); ?></h2>
                         </div>
                     </div>
                 </div>
@@ -232,7 +232,7 @@ get_header();
     <section class="container md:w-6/12 md:mx-auto">
         <header class="my-4">
             <div class="flex justify-center">
-                <h1 class="font-extrabold dark:text-slate-100">No articles available.</h1>
+                <h1 class="font-extrabold dark:text-slate-100"><?php _e('No articles available.', 'ink'); ?></h1>
             </div>
         </header>
     </section>

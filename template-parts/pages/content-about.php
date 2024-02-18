@@ -13,7 +13,7 @@
                 </div>
                 <div>
                     <div class="h-5 mt-2">
-                        <h2 class="font-saira font-bold text-xl dark:text-gray-200">About Me</h2>
+                        <h2 class="font-saira font-bold text-xl dark:text-gray-200"><?php _e('About Me', 'ink'); ?></h2>
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
                     </div>
                     <div class="flex flex-col">
                         <div class="h-5 mt-2">
-                            <h2 class="font-saira font-bold text-xl dark:text-gray-200">Contact</h2>
+                            <h2 class="font-saira font-bold text-xl dark:text-gray-200"><?php _e('Contact', 'ink'); ?></h2>
                         </div>
                     </div>
                 </div>
@@ -126,7 +126,7 @@
                     </div>
                     <div class="flex flex-col">
                         <div class="h-5 mt-2">
-                            <h2 class="font-saira font-bold text-xl dark:text-gray-200">Education and Certification</h2>
+                            <h2 class="font-saira font-bold text-xl dark:text-gray-200"><?php _e('Education and Certification', 'ink'); ?></h2>
                         </div>
                     </div>
                 </div>
@@ -166,7 +166,7 @@
                 </div>
                 <div>
                     <div class="h-5 mt-2">
-                        <h2 class="font-saira font-bold text-xl dark:text-gray-200">Work Experience</h2>
+                        <h2 class="font-saira font-bold text-xl dark:text-gray-200"><?php _e('Work Experience', 'ink'); ?></h2>
                     </div>
                 </div>
             </div>

@@ -7,7 +7,7 @@
             </div>
             <div class="flex flex-col">
                 <div class="h-5 mt-2">
-                    <h2 class="font-saira font-bold text-xl dark:text-gray-200">Search</h2>
+                    <h2 class="font-saira font-bold text-xl dark:text-gray-200"><?php _e('Search', 'ink'); ?></h2>
                 </div>
             </div>
         </div>
@@ -28,7 +28,7 @@
             </div>
             <div class="flex flex-col">
                 <div class="h-5 mt-2">
-                    <h2 class="font-saira font-bold text-xl dark:text-gray-200">Categories</h2>
+                    <h2 class="font-saira font-bold text-xl dark:text-gray-200"><?php _e('Categories', 'ink'); ?></h2>
                 </div>
             </div>
         </div>
@@ -66,7 +66,7 @@
             </div>
             <div class="flex flex-col">
                 <div class="h-5 mt-2">
-                    <h2 class="font-saira font-bold text-xl dark:text-gray-200">Recent Articles</h2>
+                    <h2 class="font-saira font-bold text-xl dark:text-gray-200"><?php _e('Recent Articles', 'ink'); ?></h2>
                 </div>
             </div>
         </div>
@@ -121,7 +121,7 @@
             </div>
             <div class="flex flex-col">
                 <div class="h-5 mt-2">
-                    <h2 class="font-saira font-bold text-xl dark:text-gray-200">Tags</h2>
+                    <h2 class="font-saira font-bold text-xl dark:text-gray-200"><?php _e('Tags', 'ink'); ?></h2>
                 </div>
             </div>
         </div>

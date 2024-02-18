@@ -49,9 +49,9 @@
                                 $current_url = home_url($wp->request);
                                 $path = parse_url($current_url, PHP_URL_PATH);
                             ?>
-                            <li><a href="/articles" class="py-1 border-gray-900 hover:border-b-2 dark:text-gray-200 dark:hover:border-gray-200 <?php echo $path === '/articles' || is_single() ? "border-b-2 dark:border-gray-200": ""; ?>">Articles</a></li>
-                            <li><a href="/projects" class="py-1 border-gray-900 hover:border-b-2 dark:text-gray-200 dark:hover:border-gray-200 <?php echo $path === '/projects' ? "border-b-2 dark:border-gray-200": ""; ?>">Projects</a></li>
-                            <li><a href="/about" class="py-1 border-gray-900 hover:border-b-2 dark:text-gray-200 dark:hover:border-gray-200 <?php echo $path === '/about' ? "border-b-2 dark:border-gray-200": ""; ?>">About</a></li>
+                            <li><a href="/articles" class="py-1 border-gray-900 hover:border-b-2 dark:text-gray-200 dark:hover:border-gray-200 <?php echo $path === '/articles' || is_single() ? "border-b-2 dark:border-gray-200": ""; ?>"><?php _e('Articles', 'ink'); ?></a></li>
+                            <li><a href="/projects" class="py-1 border-gray-900 hover:border-b-2 dark:text-gray-200 dark:hover:border-gray-200 <?php echo $path === '/projects' ? "border-b-2 dark:border-gray-200": ""; ?>"><?php _e('Projects', 'ink'); ?></a></li>
+                            <li><a href="/about" class="py-1 border-gray-900 hover:border-b-2 dark:text-gray-200 dark:hover:border-gray-200 <?php echo $path === '/about' ? "border-b-2 dark:border-gray-200": ""; ?>"><?php _e('About', 'ink'); ?></a></li>
                         </ul>
                     </nav>
                     <div class="basis-1/5 md:basis-4/12 pr-3 md:pr-0 border-r md:border-r-0 dark:border-r-gray-400">

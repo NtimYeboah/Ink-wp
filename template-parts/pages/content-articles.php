@@ -10,7 +10,7 @@
                 </div>
                 <div>
                     <div class="h-5 mt-2">
-                        <h2 class="font-saira font-bold text-xl dark:text-gray-200">All Articles</h2>
+                        <h2 class="font-saira font-bold text-xl dark:text-gray-200"><?php _e('All Articles', 'ink'); ?></h2>
                     </div>
                 </div>
             </div>
@@ -50,9 +50,9 @@
                 <div class="flex flex-row bg-slate-100 dark:bg-slate-900 justify-between px-4 font-semibold py-2 mb-4 mx-4 dark:text-gray-200">
                     <div>
                         <?php if ($prev['disabled']): ?>
-                        <p class="text-gray-500 dark:text-gray-400">Prev</p>
+                        <p class="text-gray-500 dark:text-gray-400"><?php _e('Prev', 'ink'); ?></p>
                         <?php else: ?>
-                        <a href="<?php echo $prev['url'] ?>" class="hover:text-rose-500">Prev</a>
+                        <a href="<?php echo $prev['url'] ?>" class="hover:text-rose-500"><?php _e('Prev', 'ink'); ?></a>
                         <?php endif; ?>
                     </div>
                     <div class="flex flex-row justify-between gap-10">
@@ -64,9 +64,9 @@
                     </div>
                     <div>
                         <?php if ($next['disabled']): ?>
-                        <p class="text-gray-500 dark:text-gray-400">Next</p>
+                        <p class="text-gray-500 dark:text-gray-400"><?php _e('Next', 'ink'); ?></p>
                         <?php else: ?>
-                        <a href="<?php echo $next['url'] ?>" class="hover:text-rose-500">Next</a>
+                        <a href="<?php echo $next['url'] ?>" class="hover:text-rose-500"><?php _e('Next', 'ink'); ?></a>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -76,7 +76,7 @@
                 <section class="container md:w-6/12 md:mx-auto">
                     <header class="my-4">
                         <div class="flex justify-center">
-                            <h1 class="font-extrabold dark:text-slate-100">No articles available.</h1>
+                            <h1 class="font-extrabold dark:text-slate-100"><?php _e('No articles available.', 'ink'); ?></h1>
                         </div>
                     </header>
                 </section>

@@ -10,7 +10,7 @@
                 </div>
                 <div>
                     <div class="h-5 mt-2">
-                        <h2 class="font-saira font-bold text-xl dark:text-gray-200">Open Source</h2>
+                        <h2 class="font-saira font-bold text-xl dark:text-gray-200"><?php _e('Open Source', 'ink'); ?></h2>
                     </div>
                 </div>
             </div>

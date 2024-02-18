@@ -11,9 +11,9 @@
                     </div>
                     <div class="hidden md:block md:w-2/6 lg:w-4/12">
                         <ul class="flex justify-between gap-1 md:gap-0 lg:justify-center lg:gap-16">
-                            <li><a href="/" class="font-saira font-semibold text-slate-400 py-4 dark:text-gray-400">Articles</a></li>
-                            <li><a href="/projects" class="font-saira font-semibold text-slate-400 py-4 dark:text-gray-400">Projects</a></li>
-                            <li><a href="/about" class="font-saira font-semibold text-slate-400 py-4 dark:text-gray-400">About</a></li>
+                            <li><a href="/" class="font-saira font-semibold text-slate-400 py-4 dark:text-gray-400"><?php _e('Articles', 'ink'); ?></a></li>
+                            <li><a href="/projects" class="font-saira font-semibold text-slate-400 py-4 dark:text-gray-400"><?php _e('Projects', 'ink'); ?></a></li>
+                            <li><a href="/about" class="font-saira font-semibold text-slate-400 py-4 dark:text-gray-400"><?php _e('About', 'ink'); ?></a></li>
                         </ul>
                     </div>
                     <div class="w-3/6 md:w-2/6 lg:w-4/12">

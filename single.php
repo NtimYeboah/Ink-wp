@@ -61,7 +61,7 @@ get_header();
                         <h2 class="font-saira font-bold text-xl dark:text-gray-200">
                             <?php
                                 echo esc_html($numOfComments);
-                                if ($numOfComments > 1) echo ' comments'; else echo ' comment'
+                                if ($numOfComments > 1) _e(' comments', 'ink'); else _e(' comment', 'ink');
                             ?>
                         </h2>
                     </div>
@@ -140,16 +140,16 @@ get_header();
                 </div>
                 <div>
                     <div class="mt-2 mb-2">
-                        <h2 class="font-saira font-bold text-xl dark:text-gray-200">Leave a comment</h2>
+                        <h2 class="font-saira font-bold text-xl dark:text-gray-200"><?php _e('Leave a comment', 'ink'); ?></h2>
                         <?php if (is_user_logged_in()):
                             global $wp;
                             $currentUrl = home_url(add_query_arg([], $wp->request));
                         ?>
-                        <p class="font-sarabun dark:text-gray-300">Logged in as <?php echo wp_get_current_user()->display_name ?>. <a href="<?php echo wp_logout_url($currentUrl) ?>" class="hover:underline underline">Log out?</a> Required fields are marked *</p>
+                        <p class="font-sarabun dark:text-gray-300"><?php _e('Logged in as', 'ink'); ?> <?php echo wp_get_current_user()->display_name ?>. <a href="<?php echo wp_logout_url($currentUrl) ?>" class="hover:underline underline"><?php _e('Log out?', 'ink'); ?></a> <?php _e('Required fields are marked', 'ink'); ?> *</p>
                         <?php else: ?>
                         <div class="dark:text-gray-300">
-                            <p>Your email address will not be published. Required fields are marked * </p>
-                            <p>Having trouble posting comment? <a class="hover:underline underline" href="<?php echo wp_login_url(); ?>">Log in</a>.</p>
+                            <p><?php _e('Your email address will not be published. Required fields are marked', 'ink'); ?> * </p>
+                            <p><?php _e('Having trouble posting comment?', 'ink'); ?> <a class="hover:underline underline" href="<?php echo wp_login_url(); ?>"><?php _e('Log in', 'ink'); ?></a>.</p>
                         </div>
                         <?php endif; ?>
                     </div>
@@ -159,9 +159,9 @@ get_header();
             <div class="flex flex-col mx-4 mb-4">
                 <div class="flex flex-col">
                     <form action="<?php echo esc_url_raw(home_url() . '/wp-comments-post.php'); ?>" method="post" id="commentform">
-                        <label for="comment" class="text-gray-700 dark:text-gray-400">Comment *</label>
+                        <label for="comment" class="text-gray-700 dark:text-gray-400"><?php _e('Comment', 'ink'); ?> *</label>
                         <textarea name="comment" class="w-full form-textarea mb-2 dark:bg-gray-900 dark:text-gray-300" rows="5"></textarea>
-                        <button type="submit" name="submit" class="bg-slate-600 p-2 text-white font-base inset-0 hover:bg-slate-700">Post Comment</button>
+                        <button type="submit" name="submit" class="bg-slate-600 p-2 text-white font-base inset-0 hover:bg-slate-700"><?php _e('Post Comment', 'ink'); ?></button>
                         <input type="hidden" name="comment_post_ID" value="<?php the_ID(); ?>" id="comment_post_ID">
                     </form>
                 </div>
@@ -194,7 +194,7 @@ get_header();
                 </div>
                 <div>
                     <div class="h-5 mt-2">
-                        <h2 class="font-saira font-bold text-xl dark:text-gray-200">You might be interested in these too</h2>
+                        <h2 class="font-saira font-bold text-xl dark:text-gray-200"><?php _e('You might be interested in these too', 'ink'); ?></h2>
                     </div>
                 </div>
             </div>
