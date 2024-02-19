@@ -18,7 +18,7 @@ get_header();
                     </div>
                     <div class="flex flex-col">
                         <div class="h-5 mt-2">
-                            <h2 class="font-saira font-bold text-xl dark:text-gray-200">Search</h2>
+                            <h2 class="font-saira font-bold text-xl dark:text-gray-200"><?php _e('Search', 'ink'); ?></h2>
                         </div>
                     </div>
                 </div>
@@ -60,7 +60,7 @@ get_header();
             <?php $featured_article->the_post(); ?>
             <div class="hidden flex-row md:grid md:grid-cols-2 dark:hover:bg-slate-900 hover:bg-slate-100 md:gap-4 mx-4 mb-4 bg-50% bg-no-repeat bg-right" style="background-image: url('<?php echo the_post_thumbnail_url(); ?>')">
                 <article class="dark:hover:bg-slate-900 hover:bg-slate-100 mb-4">
-                    <a id="feature-article-<?php the_ID(); ?>" href="<?php echo esc_url(get_permalink()); ?>" class="">
+                    <a id="feature-article-<?php the_ID(); ?>" href="<?php echo esc_url(get_permalink()); ?>">
                         <div class="flex flex-col px-4">
                             <div class="flex flex-col text-lg text-gray-900 dark:text-gray-300">
                                 <?php the_title('<h3 class="font-sarabun mt-5 font-extrabold text-2xl text-left dark:text-gray-300 tracking-wide">', '</h3>'); ?>
@@ -89,7 +89,7 @@ get_header();
 
             <div class="md:hidden flex flex-col mx-4 mb-2">
                 <article class="dark:hover:bg-slate-900 hover:bg-slate-100 mb-4">
-                    <a href="<?php echo esc_url(get_permalink()); ?>" class="">
+                    <a href="<?php echo esc_url(get_permalink()); ?>">
                         <div class="flex-col">
                             <picture>
                                 <img class="w-full h-48 object-cover object-center mb-2" src="<?php echo the_post_thumbnail_url(); ?>" alt="">
