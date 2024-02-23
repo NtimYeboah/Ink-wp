@@ -1,5 +1,8 @@
 <?php
 get_header();
+
+$display_commenting_system = get_theme_mod('commenting_system_to_display');
+$display_related_articles = get_theme_mod('related_articles');
 ?>
 
 <!-- Main content -->
@@ -38,17 +41,20 @@ get_header();
             <?php the_content(); ?>
         </div>
 
+        <?php if ($display_commenting_system == 'giscus'): ?>
         <!-- Giscus comments section -->
-        <!-- <div class="hidden md:block giscus mb-10">
-        </div> -->
+        <div class="hidden md:block giscus mb-10">
+        </div>
         <!-- End of Giscus comments section-->
+        <?php endif; ?>
     </div>
 
     <!-- Comments list container -->
-    <?php            
-        $numOfComments = get_comments_number();
-        if ($numOfComments > 0):
-    ?>
+    <?php if ($display_commenting_system == 'native'): ?>
+        <?php
+            $numOfComments = get_comments_number();
+            if ($numOfComments > 0):
+        ?>
     <div class="md:w-7/12 md:mx-auto flex flex-col">
         <div class="flex flex-col bg-slate-50 dark:bg-gray-950">
             <div class="flex flex-row gap-3">
@@ -169,9 +175,11 @@ get_header();
         </div>
     </div>
     <!-- End of comments form -->
+    <?php endif; ?>
 
     <!-- Post cross-sell -->
     <?php
+    if ($display_related_articles == 1):
         $category_posts = [];
 
         if ($category_slug != '') {
@@ -209,7 +217,10 @@ get_header();
             </div>
         </div>
     </div>
-    <?php endif; ?>
+    <?php
+    endif;
+        endif;
+    ?>
     <!-- End of Post cross-sell -->
 </section>
 <!-- End of main content -->

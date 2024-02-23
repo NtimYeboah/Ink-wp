@@ -4,9 +4,18 @@
  * Main template file
  */
 get_header();
+
+$display_feature_article = get_theme_mod('featured_article_display');
+$display_tips_and_snippet = get_theme_mod('tips_and_snippet_display');
+$display_sidebar = get_theme_mod('sidebar_display');
+
 ?>
 
+<?php if ($display_sidebar == 1): ?>
 <div class="container flex flex-col px-4 mx-auto md:w-8/12 mb-5 mt-5">
+<?php else: ?>
+<div class="container flex flex-col px-4 mx-auto md:w-7/12 mb-5 mt-5">
+<?php endif; ?>
     <div class="flex flex-col">
         <div class="flex flex-col md:w-8/12">
             <!-- Search for sm screens -->
@@ -30,18 +39,20 @@ get_header();
         </div>
     </div>
     <?php
-    $args = [
-        'tax_query' => [
-            [
-                'taxonomy' => 'post_tag',
-                'field' => 'slug',
-                'terms' => ['featured']
-            ]
-        ]
-    ];
-    $featured_article = new WP_Query($args);
 
-    if ($featured_article):
+    if ($display_feature_article == 1):
+        $args = [
+            'tax_query' => [
+                [
+                    'taxonomy' => 'post_tag',
+                    'field' => 'slug',
+                    'terms' => ['featured']
+                ]
+            ]
+        ];
+        $featured_article = new WP_Query($args);
+
+        if ($featured_article):
     ?>
     <div class="flex flex-col">
         <!-- Featured Article -->
@@ -125,6 +136,7 @@ get_header();
         <!-- End of featured article -->
     </div>
     <?php
+    endif;
         endif;
 
         wp_reset_postdata();
@@ -141,8 +153,11 @@ get_header();
     if ($primary_posts->have_posts()):
     ?>
     <div class="flex flex-col md:flex-row gap-4">
+        <?php if ($display_sidebar == 1): ?>
         <div class="flex flex-col md:w-8/12">
-
+        <?php else: ?>
+        <div class="flex flex-col md:w-12/12">
+        <?php endif; ?>
             <!-- Articles -->
             <div class="flex flex-col mb-5 bg-slate-50 dark:bg-gray-950">
                 <div class="flex flex-row gap-3">
@@ -174,6 +189,8 @@ get_header();
             <!-- End of Articles -->
 
             <?php
+            if ($display_tips_and_snippet == 1):
+
                 $tips_query = new WP_Query([
                     'tag' => 'tips',
                     'posts_per_page' => 4
@@ -224,21 +241,29 @@ get_header();
                 <!-- End of tips container -->
             </div>
             <!-- End of Tips & Snippets -->
-            <?php endif; ?>
+            <?php
+            endif;
+                endif;
+            ?>
         </div>
 
-        <?php get_sidebar(); ?>
+        <?php
+        if ($display_sidebar == 1):
+            get_sidebar();
+        endif;
+        ?>
     </div>
-</div>
-<?php else: ?>
-    <section class="container md:w-6/12 md:mx-auto">
+
+    <?php else: ?>
+    <div class="container md:w-6/12 md:mx-auto">
         <header class="my-4">
             <div class="flex justify-center">
                 <h1 class="font-extrabold dark:text-slate-100"><?php _e('No articles available.', 'ink'); ?></h1>
             </div>
         </header>
-    </section>
-<?php endif; ?>
+    </div>
+    <?php endif; ?>
+</div>
 
 <?php
 get_footer();

@@ -170,3 +170,19 @@ if (! function_exists('numeric_post_pagination')) {
         return $links;
     }
 }
+
+require get_stylesheet_directory() . '/inc/ink_customizer.php';
+
+if (! function_exists('ink_giscus_script')) {
+    /**
+     * Add Giscus comments
+     */
+    function ink_giscus_script() {
+        if (is_single()) {
+            ?>
+                <?php echo get_theme_mod('giscus_script'); ?>
+            <?php
+        }
+    }
+}
+add_action('wp_footer', 'ink_giscus_script');

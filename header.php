@@ -29,7 +29,11 @@
     <body <?php body_class('antialiased bg-white dark:bg-gray-900 scroll-smooth'); ?>>
         <header class="py-4">
             <div class="container pl-4 pr-4 sm:pl-4 sm:pr-4 md:mx-auto">
+                <?php if (get_theme_mod('sidebar_display') == 1): ?>
                 <div class="md:w-10/12 md:mx-auto flex flex-row justify-between items-center">
+                <?php else: ?>
+                <div class="md:w-8/12 md:mx-auto flex flex-row justify-between items-center">
+                <?php endif; ?>
                     <div class="basis-4/5 md:basis-4/12">
                         <?php
                             $custom_logo_id = get_theme_mod('custom_logo');
