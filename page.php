@@ -1,6 +1,6 @@
 <?php
 /**
- * Page contents - This is used all pages
+ * Page contents
  */
 get_header();
 ?>
@@ -17,5 +17,6 @@ get_header();
 
     get_template_part('template-parts/pages/content', $path);
 ?>
+
 <?php
 get_footer();

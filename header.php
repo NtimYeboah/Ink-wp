@@ -60,7 +60,7 @@
                     </nav>
                     <div class="basis-1/5 md:basis-4/12 pr-3 md:pr-0 border-r md:border-r-0 dark:border-r-gray-400">
                         <ul class="flex justify-end items-center gap-8">
-                            <?php if ($path == ''): ?>
+                            <?php if ($path == '' && get_theme_mod('sidebar_display') == 1): ?>
                             <li class="md:hidden">
                                 <button
                                     id="search-icon"

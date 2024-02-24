@@ -14,8 +14,11 @@ $display_sidebar = get_theme_mod('sidebar_display');
 <?php if ($display_sidebar == 1): ?>
 <div class="container flex flex-col px-4 mx-auto md:w-8/12 mb-5 mt-5">
 <?php else: ?>
-<div class="container flex flex-col px-4 mx-auto md:w-7/12 mb-5 mt-5">
+<div class="container flex flex-col px-4 mx-auto mb-5 mt-5">
+<div class="md:w-7/12 md:mx-auto flex flex-col">
 <?php endif; ?>
+
+    <?php if ($display_sidebar == 1): ?>
     <div class="flex flex-col">
         <div class="flex flex-col md:w-8/12">
             <!-- Search for sm screens -->
@@ -38,6 +41,7 @@ $display_sidebar = get_theme_mod('sidebar_display');
             <!-- End of search for sm screens -->
         </div>
     </div>
+    <?php endif; ?>
     <?php
 
     if ($display_feature_article == 1):
@@ -263,6 +267,10 @@ $display_sidebar = get_theme_mod('sidebar_display');
         </header>
     </div>
     <?php endif; ?>
+
+<?php if ($display_sidebar == 0): ?>
+</div>
+<?php endif; ?>
 </div>
 
 <?php

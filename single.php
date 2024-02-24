@@ -43,7 +43,7 @@ $display_related_articles = get_theme_mod('related_articles');
 
         <?php if ($display_commenting_system == 'giscus'): ?>
         <!-- Giscus comments section -->
-        <div class="hidden md:block giscus mb-10">
+        <div class="giscus mb-10">
         </div>
         <!-- End of Giscus comments section-->
         <?php endif; ?>
