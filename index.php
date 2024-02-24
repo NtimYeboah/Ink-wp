@@ -8,7 +8,6 @@ get_header();
 $display_feature_article = get_theme_mod('featured_article_display');
 $display_tips_and_snippet = get_theme_mod('tips_and_snippet_display');
 $display_sidebar = get_theme_mod('sidebar_display');
-
 ?>
 
 <?php if ($display_sidebar == 1): ?>
