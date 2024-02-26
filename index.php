@@ -252,7 +252,7 @@ $display_sidebar = get_theme_mod('sidebar_display');
 
         <?php
         if ($display_sidebar == 1):
-            get_sidebar();
+            get_sidebar('main');
         endif;
         ?>
     </div>

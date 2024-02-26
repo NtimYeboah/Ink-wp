@@ -2,7 +2,6 @@
 get_header();
 
 $display_commenting_system = get_theme_mod('commenting_system_to_display');
-$display_related_articles = get_theme_mod('related_articles');
 ?>
 
 <!-- Main content -->
@@ -177,51 +176,8 @@ $display_related_articles = get_theme_mod('related_articles');
     <!-- End of comments form -->
     <?php endif; ?>
 
-    <!-- Post cross-sell -->
-    <?php
-    if ($display_related_articles == 1):
-        $category_posts = [];
+    <?php get_sidebar('related-articles'); ?>
 
-        if ($category_slug != '') {
-            $category_posts = new WP_Query([
-                'post_per_page' => 3,
-                'category_name' => $category_slug,
-                'post__not_in' => [get_the_ID()]
-            ]);
-        }
-        
-        if ($category_posts->have_posts()):
-    ?>
-    <div class="md:w-8/12 md:mx-auto flex flex-col mb-10 mt-5">
-        <div class="flex flex-col bg-slate-50 dark:bg-gray-950">
-            <!-- Text container -->
-            <div class="flex flex-row gap-3">
-                <div>
-                    <div class="h-5 my-3 border-l-2 border-l-rose-500">
-                    </div>
-                </div>
-                <div>
-                    <div class="h-5 mt-2">
-                        <h2 class="font-saira font-bold text-xl dark:text-gray-200"><?php _e('You might be interested in these too', 'ink'); ?></h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="flex flex-col md:grid md:grid-cols-3 md:gap-4 mx-4 mb-4">
-                <?php
-                    while ($category_posts->have_posts()):
-                        $category_posts->the_post();
-                        get_template_part('template-parts/posts/content');
-                    endwhile;
-                ?>
-            </div>
-        </div>
-    </div>
-    <?php
-    endif;
-        endif;
-    ?>
-    <!-- End of Post cross-sell -->
 </section>
 <!-- End of main content -->
 

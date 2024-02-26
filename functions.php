@@ -221,6 +221,8 @@ require get_stylesheet_directory() . '/inc/widgets/ink_search_widget.php';
 require get_stylesheet_directory() . '/inc/widgets/ink_categories_widget.php';
 require get_stylesheet_directory() . '/inc/widgets/ink_recent_articles_widget.php';
 require get_stylesheet_directory() . '/inc/widgets/ink_tags_widget.php';
+require get_stylesheet_directory() . '/inc/widgets/ink_related_articles_widget.php';
+
 
 if (! function_exists('register_ink_widgets')) {
     function register_ink_widgets() {
@@ -228,6 +230,7 @@ if (! function_exists('register_ink_widgets')) {
         register_widget('Ink_Categories_Widget');
         register_widget('Ink_Recent_Articles_Widget');
         register_widget('Ink_Tags_Widget');
+        register_widget('Ink_Related_Articles_Widget');
     }
 }
 add_action('widgets_init', 'register_ink_widgets');

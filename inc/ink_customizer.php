@@ -53,24 +53,6 @@ class Ink_Customizer
             'type' => 'textarea',
             'active_callback' => function () {return get_theme_mod('commenting_system_to_display') == 'giscus'; },
         )));
-
-
-        // Toggle article you might be interested in.
-        $wp_customize->add_setting('related_articles', array(
-            'default' => 'No',
-            'sanitize_callback' => array($this, 'sanitize_select_type')
-        ));
-
-        $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'related_articles_control', array(
-            'label' => __('Display related articles'),
-            'section' => 'article_details_page',
-            'settings' => 'related_articles',
-            'type' => 'select',
-            'choices' => array(
-                'No' => __('No'),
-                'Yes' => __('Yes')
-            ),
-        )));
     }
 
     private function ink_homepage_section($wp_customize)
