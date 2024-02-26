@@ -186,3 +186,48 @@ if (! function_exists('ink_giscus_script')) {
     }
 }
 add_action('wp_footer', 'ink_giscus_script');
+
+if (! function_exists('ink_register_sidebars')) {
+    function ink_register_sidebars() {
+        // Main sidebar
+        register_sidebar([
+            'name' => __('Main sidebar', 'ink'),
+            'id' => 'main-sidebar',
+            'description' => __('Main sidebar to be displayed on front page and article details page', 'ink'),
+            'before_sidebar' => '<div>',
+            'after_sidebar' => '</div>',
+            'before_widget' => '<div>',
+            'after_widget' => '</div>',
+        ]);
+
+        // Related articles sidebar
+        register_sidebar([
+            'name' => __('Related articles sidebar', 'ink'),
+            'id' => 'related-articles-sidebar',
+            'description' => __('Related articles sidebar shown in article details page', 'ink'),
+        ]);
+
+        // Related articles sidebar
+        register_sidebar([
+            'name' => __('Footer sidebar', 'ink'),
+            'id' => 'footer-articles-sidebar',
+            'description' => __('Footer sidebar in the footer', 'ink'),
+        ]);
+    }
+}
+add_action('widgets_init', 'ink_register_sidebars');
+
+require get_stylesheet_directory() . '/inc/widgets/ink_search_widget.php';
+require get_stylesheet_directory() . '/inc/widgets/ink_categories_widget.php';
+require get_stylesheet_directory() . '/inc/widgets/ink_recent_articles_widget.php';
+require get_stylesheet_directory() . '/inc/widgets/ink_tags_widget.php';
+
+if (! function_exists('register_ink_widgets')) {
+    function register_ink_widgets() {
+        register_widget('Ink_Search_Widget');
+        register_widget('Ink_Categories_Widget');
+        register_widget('Ink_Recent_Articles_Widget');
+        register_widget('Ink_Tags_Widget');
+    }
+}
+add_action('widgets_init', 'register_ink_widgets');
