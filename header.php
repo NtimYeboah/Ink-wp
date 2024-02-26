@@ -49,13 +49,19 @@
                     <nav class="hidden md:block md:basis-4/12 basis-1/4">
                         <ul class="flex justify-center gap-12 font-saira text-xl font-semibold">
                             <?php
-                                global $wp;
-                                $current_url = home_url($wp->request);
-                                $path = parse_url($current_url, PHP_URL_PATH);
+                                $path = ink_current_path();
+
+                                $menu_items = ink_get_nav_menu_items('primary');
+
+                                foreach ($menu_items as $menu_item):
+                                    $menu_path = parse_url($menu_item->url, PHP_URL_PATH);
                             ?>
-                            <li><a href="/articles" class="py-1 border-gray-900 hover:border-b-2 dark:text-gray-200 dark:hover:border-gray-200 <?php echo $path === '/articles' || str_contains($path, '/articles/') || is_single() ? "border-b-2 dark:border-gray-200": ""; ?>"><?php _e('Articles', 'ink'); ?></a></li>
-                            <li><a href="/projects" class="py-1 border-gray-900 hover:border-b-2 dark:text-gray-200 dark:hover:border-gray-200 <?php echo $path === '/projects' ? "border-b-2 dark:border-gray-200": ""; ?>"><?php _e('Projects', 'ink'); ?></a></li>
-                            <li><a href="/about" class="py-1 border-gray-900 hover:border-b-2 dark:text-gray-200 dark:hover:border-gray-200 <?php echo $path === '/about' ? "border-b-2 dark:border-gray-200": ""; ?>"><?php _e('About', 'ink'); ?></a></li>
+                            <li>
+                                <a href="<?php echo $menu_item->url; ?>" class="py-1 border-gray-900 hover:border-b-2 dark:text-gray-200 dark:hover:border-gray-200 <?php echo $menu_path === $path . '/' ? "border-b-2 dark:border-gray-200": ""; ?>">
+                                    <?php echo $menu_item->title ?>
+                                </a>
+                            </li>
+                            <?php endforeach; ?>
                         </ul>
                     </nav>
                     <div class="basis-1/5 md:basis-4/12 pr-3 md:pr-0 border-r md:border-r-0 dark:border-r-gray-400">
@@ -134,9 +140,13 @@
         <!-- Menu for SM and below devices -->
         <section id="sm-menu" class="hidden w-full shadow-sm z-50 absolute bg-white md:hidden lg:hidden 2xl:hidden dark:bg-gray-900">
             <ul class="flex flex-col items-end">
-                <li class="py-2 border-b dark:border-b-gray-400 w-full"><a href="/articles" class="font-saira font-bold float-right pr-5 py-2 border-gray-300 dark:text-gray-200"><?php _e('Articles', 'ink'); ?></a></li>
-                <li class="py-2 w-full"><a href="/projects" class="font-saira font-bold float-right pr-5 py-2 border-gray-300 dark:text-gray-200"><?php _e('Projects', 'ink'); ?></a></li>
-                <li class="py-2 border-t dark:border-t-gray-400 w-full"><a href="/about" class="font-saira font-bold float-right pr-5 py-2 border-gray-300 dark:text-gray-200"><?php _e('About', 'ink'); ?></a></li>
+                <?php for ($i = 0; $i < count($menu_items); $i++): ?>
+                <li class="py-2 <?php echo $i != count($menu_items) - 1 ? 'border-b dark:border-b-gray-400' : '' ?> w-full">
+                    <a href="<?php echo $menu_items[$i]->url; ?>" class="font-saira font-bold float-right pr-5 py-2 border-gray-300 dark:text-gray-200">
+                        <?php echo $menu_items[$i]->title ?>
+                    </a>
+                </li>
+                <?php endfor; ?>
             </ul>
         </section>
         <!-- End of menu for SM and below devices -->

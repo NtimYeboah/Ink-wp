@@ -27,6 +27,7 @@ class Ink_Related_Articles_Widget extends WP_Widget
             'post__not_in' => [get_the_ID()]
         ]); ?>
 
+        <?php if ($category_posts->have_posts()): ?>
         <div class="flex flex-col bg-slate-50 dark:bg-gray-950">
             <!-- Text container -->
             <div class="flex flex-row gap-3">
@@ -56,7 +57,8 @@ class Ink_Related_Articles_Widget extends WP_Widget
                     endwhile;
                 ?>
             </div>
-        </div><?php
+        </div>
+        <?php endif; ?><?php
     }
 
     public function form( $instance )

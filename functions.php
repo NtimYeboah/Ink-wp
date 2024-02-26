@@ -234,3 +234,21 @@ if (! function_exists('register_ink_widgets')) {
     }
 }
 add_action('widgets_init', 'register_ink_widgets');
+
+if (! function_exists('ink_get_nav_menu_items')) {
+    function ink_get_nav_menu_items($location) {
+        $menu_locations = get_nav_menu_locations();
+        $menu_id = $menu_locations[$location];
+
+        return wp_get_nav_menu_items($menu_id);
+    }
+}
+
+if (! function_exists('ink_current_path')) {
+    function ink_current_path() {
+        global $wp;
+        $current_url = home_url($wp->request);
+
+        return parse_url($current_url, PHP_URL_PATH);
+    }
+}
