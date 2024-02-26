@@ -11,9 +11,18 @@
                     </div>
                     <div class="hidden md:block md:w-2/6 lg:w-4/12">
                         <ul class="flex justify-between gap-1 md:gap-0 lg:justify-center lg:gap-16">
-                            <li><a href="/" class="font-saira font-semibold text-slate-400 py-4 dark:text-gray-400"><?php _e('Articles', 'ink'); ?></a></li>
-                            <li><a href="/projects" class="font-saira font-semibold text-slate-400 py-4 dark:text-gray-400"><?php _e('Projects', 'ink'); ?></a></li>
-                            <li><a href="/about" class="font-saira font-semibold text-slate-400 py-4 dark:text-gray-400"><?php _e('About', 'ink'); ?></a></li>
+                            <?php
+                                $menu_items = ink_get_nav_menu_items('primary');
+
+                                foreach ($menu_items as $menu_item):
+                                    $menu_path = parse_url($menu_item->url, PHP_URL_PATH);
+                            ?>
+                            <li>
+                                <a href="<?php echo $menu_item->url; ?>" class="font-saira font-semibold text-slate-400 py-4 dark:text-gray-400">
+                                    <?php echo $menu_item->title; ?>
+                                </a>
+                            </li>
+                            <?php endforeach; ?>
                         </ul>
                     </div>
                     <div class="w-3/6 md:w-2/6 lg:w-4/12">
