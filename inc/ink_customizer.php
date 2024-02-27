@@ -11,6 +11,67 @@ class Ink_Customizer
     {
         $this->ink_homepage_section($wp_customize);
         $this->ink_article_details_section($wp_customize);
+        $this->ink_about_page_section($wp_customize);
+    }
+
+    private function ink_about_page_section($wp_customize)
+    {
+        $wp_customize->add_section('about_page', array(
+            'title' => 'About Page Settings',
+            'priority' => 122,
+            'description' => __('You have the option to choose what information container to display', 'ink')
+        ));
+
+        // Contact container setting
+        $wp_customize->add_setting('contact_container_setting', array(
+            'default' => 'No',
+            'sanitize_callback' => array($this, 'sanitize_select_type')
+        ));
+
+        $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'contact_container_control', array(
+            'label' => __('Display contact'),
+            'section' => 'about_page',
+            'settings' => 'contact_container_setting',
+            'type' => 'select',
+            'choices' => array(
+                'No' => __('No'),
+                'Yes' => __('Yes')
+            ),
+        )));
+
+        // Education and certification container setting
+        $wp_customize->add_setting('education_container_setting', array(
+            'default' => 'No',
+            'sanitize_callback' => array($this, 'sanitize_select_type')
+        ));
+
+        $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'education_control', array(
+            'label' => __('Display education and certification'),
+            'section' => 'about_page',
+            'settings' => 'education_container_setting',
+            'type' => 'select',
+            'choices' => array(
+                'No' => __('No'),
+                'Yes' => __('Yes')
+            ),
+        )));
+
+        // Work experience container setting
+        $wp_customize->add_setting('work_experience_container_setting', array(
+            'default' => 'No',
+            'sanitize_callback' => array($this, 'sanitize_select_type')
+        ));
+
+        $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'work_experience_control', array(
+            'label' => __('Display work experience'),
+            'section' => 'about_page',
+            'settings' => 'work_experience_container_setting',
+            'type' => 'select',
+            'choices' => array(
+                'No' => __('No'),
+                'Yes' => __('Yes')
+            ),
+        )));
     }
 
     private function ink_article_details_section($wp_customize)
