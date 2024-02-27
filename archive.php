@@ -42,9 +42,9 @@ get_header();
                             <div class="flex flex-col">
                                 <?php the_title('<h3 class="font-sarabun mt-5 md:mt-0 font-extrabold text-lg text-left dark:text-gray-300 tracking-wide">', '</h3>') ?>
 
-                                <p class="text-base text-gray-900 dark:text-gray-300 mt-3 md:line-clamp-2">
+                                <div class="text-base text-gray-900 dark:text-gray-300 mt-3 md:line-clamp-2">
                                     <?php the_excerpt(); ?>
-                                </p>
+                                </div>
                             </div>
                         </div>
                     </div>
