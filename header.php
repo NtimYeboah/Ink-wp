@@ -69,7 +69,7 @@
                             ?>
                         </ul>
                     </nav>
-                    <div class="basis-1/5 md:basis-4/12 pr-3 md:pr-0 border-r md:border-r-0 dark:border-r-gray-400">
+                    <div class="basis-1/5 md:basis-4/12 pr-3 md:pr-0 <?php ($menu_items) ? 'border-r' : '' ?> md:border-r-0 dark:border-r-gray-400">
                         <ul class="flex justify-end items-center gap-8">
                             <?php if ($path == '' && get_theme_mod('sidebar_display') == 1): ?>
                             <li class="md:hidden">
@@ -129,6 +129,7 @@
                             </li>
                         </ul>
                     </div>
+                    <?php if ($menu_items): ?>
                     <div class="basis-1/12 md:hidden lg:hidden pl-4 md:pl-0">
                         <div class="flex justify-end">
                             <svg id="sm-menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 font-bold text-gray-600 dark:text-gray-200">
@@ -139,6 +140,7 @@
                             </svg>
                         </div>
                     </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </header>
