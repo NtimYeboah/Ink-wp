@@ -54,15 +54,19 @@
 
                                 $menu_items = ink_get_nav_menu_items('primary');
 
-                                foreach ($menu_items as $menu_item):
-                                    $menu_path = parse_url($menu_item->url, PHP_URL_PATH);
+                                if ($menu_items):
+                                    foreach ($menu_items as $menu_item):
+                                        $menu_path = parse_url($menu_item->url, PHP_URL_PATH);
                             ?>
                             <li>
                                 <a href="<?php echo $menu_item->url; ?>" class="py-1 border-gray-900 hover:border-b-2 dark:text-gray-200 dark:hover:border-gray-200 <?php echo $menu_path === $path || str_contains($path, $menu_path) ? "border-b-2 dark:border-gray-200": ""; ?>">
                                     <?php echo $menu_item->title ?>
                                 </a>
                             </li>
-                            <?php endforeach; ?>
+                            <?php
+                                endforeach;
+                            endif;
+                            ?>
                         </ul>
                     </nav>
                     <div class="basis-1/5 md:basis-4/12 pr-3 md:pr-0 border-r md:border-r-0 dark:border-r-gray-400">

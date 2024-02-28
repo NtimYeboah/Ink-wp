@@ -14,15 +14,19 @@
                             <?php
                                 $menu_items = ink_get_nav_menu_items('primary');
 
-                                foreach ($menu_items as $menu_item):
-                                    $menu_path = parse_url($menu_item->url, PHP_URL_PATH);
+                                if ($menu_items):
+                                    foreach ($menu_items as $menu_item):
+                                        $menu_path = parse_url($menu_item->url, PHP_URL_PATH);
                             ?>
                             <li>
                                 <a href="<?php echo $menu_item->url; ?>" class="font-saira font-semibold text-slate-400 py-4 dark:text-gray-400">
                                     <?php echo $menu_item->title; ?>
                                 </a>
                             </li>
-                            <?php endforeach; ?>
+                            <?php
+                                endforeach;
+                            endif;
+                            ?>
                         </ul>
                     </div>
                     <div class="w-3/6 md:w-2/6 lg:w-4/12">
