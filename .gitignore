@@ -1,3 +1,7 @@
 /node_modules
 /.idea
 /.vscode
+.DS_Store
+assets/.DS_Store
+resources/.DS_Store
+template-parts/.DS_Store

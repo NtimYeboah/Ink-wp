@@ -11,9 +11,9 @@ $display_sidebar = get_theme_mod('sidebar_display');
 ?>
 
 <?php if ($display_sidebar == 1): ?>
-<div class="container flex flex-col px-4 mx-auto md:w-8/12 mb-5 mt-5">
+<div class="min-h-screen container flex flex-col px-4 mx-auto md:w-8/12 mb-5 mt-5">
 <?php else: ?>
-<div class="container flex flex-col px-4 mx-auto mb-5 mt-5">
+<div class="min-h-screen container flex flex-col px-4 mx-auto mb-5 mt-5">
 <div class="md:w-7/12 md:mx-auto flex flex-col">
 <?php endif; ?>
 
@@ -55,7 +55,7 @@ $display_sidebar = get_theme_mod('sidebar_display');
         ];
         $featured_article = new WP_Query($args);
 
-        if ($featured_article):
+        if ($featured_article->have_posts()):
     ?>
     <div class="flex flex-col">
         <!-- Featured Article -->
@@ -195,7 +195,7 @@ $display_sidebar = get_theme_mod('sidebar_display');
             if ($display_tips_and_snippet == 1):
 
                 $tips_query = new WP_Query([
-                    'tag' => 'tips',
+                    'tag' => 'tip',
                     'posts_per_page' => 4
                 ]);
 

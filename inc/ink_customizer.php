@@ -138,7 +138,7 @@ class Ink_Customizer
 
         // Tips & snippet setting
         $wp_customize->add_setting('tips_and_snippet_display', array(
-            'default' => 'No',
+            'default' => 'Yes',
             'sanitize_callback' => array($this, 'sanitize_select_type')
         ));
 

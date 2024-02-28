@@ -32,9 +32,11 @@ $display_commenting_system = get_theme_mod('commenting_system_to_display');
             <span class="text-base font-normal text-gray-600 dark:text-gray-400"><?php the_time('m.d.Y')?></span>
         </div>
 
+        <?php if (has_post_thumbnail()): ?>
         <div class="flex justify-center">
             <img class="rounded-md w-full md:h-96 object-cover object-center mt-10" src="<?php echo esc_url(the_post_thumbnail_url()); ?>" alt="feature-image">
         </div>
+        <?php endif; ?>
 
         <div id="content" class="mt-10 text-lg dark:text-gray-300 mb-10">
             <?php the_content(); ?>
