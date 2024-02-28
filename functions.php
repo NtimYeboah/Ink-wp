@@ -134,14 +134,16 @@ if (! function_exists('numeric_post_pagination')) {
 
         $url = home_url(). '/articles/page/';
 
+        $prevPage = $paged - 1;
         $prev_link = [
-            'url' => $url . $paged - 1,
+            'url' => $url . ($prevPage) ?: '',
             'active' => $paged > 1,
             'disabled' => $paged <= 1,
         ];
 
+        $nextPaged = $paged + 1;
         $next_link = [
-            'url' => $url . $paged + 1,
+            'url' => $url . ($nextPaged) ?: '',
             'active' => $paged < $total_pagination_number,
             'disabled' => $paged === $total_pagination_number,
         ];
