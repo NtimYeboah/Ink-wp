@@ -26,7 +26,7 @@ class Ink_Tags_Widget extends WP_Widget
                     <div class="h-5 mt-2">
                         <h2 class="font-saira font-bold text-xl dark:text-gray-200">
                         <?php if (empty($instance['title'])):
-                                echo _e('Categories', 'ink');
+                                echo _e('Tags', 'ink');
                             else:
                                 echo $instance['title'];
                             endif;

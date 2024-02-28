@@ -12,7 +12,7 @@
                     <div class="hidden md:block md:w-2/6 lg:w-4/12">
                         <ul class="flex justify-between gap-1 md:gap-0 lg:justify-center lg:gap-16">
                             <?php
-                                $menu_items = ink_get_nav_menu_items('primary');
+                                $menu_items = ink_get_nav_menu_items('footer');
 
                                 if ($menu_items):
                                     foreach ($menu_items as $menu_item):
