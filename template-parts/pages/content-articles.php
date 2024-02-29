@@ -19,7 +19,6 @@
             <!-- Article container -->
             <?php
             $primary_posts = new WP_Query([
-                'tag' => 'article',
                 'posts_per_page' => get_query_var('posts_per_page'),
                 'paged' => get_query_var('paged'),
             ]);
