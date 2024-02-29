@@ -1,6 +1,6 @@
 === Ink ===
 Contributors: ntimdev
-Requires at least: 6.4
+Requires at least: 5.6
 Tested up to: 6.4
 Requires PHP: 7.0
 Stable tag: 1.0.1
