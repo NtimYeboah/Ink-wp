@@ -180,7 +180,7 @@ if (! function_exists('ink_giscus_script')) {
      * Add Giscus comments
      */
     function ink_giscus_script() {
-        if (is_single()) {
+        if (is_single() && get_theme_mod('commenting_system_to_display') == 'giscus') {
             ?>
                 <?php echo get_theme_mod('giscus_script'); ?>
             <?php

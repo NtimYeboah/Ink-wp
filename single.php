@@ -51,90 +51,12 @@ $display_commenting_system = get_theme_mod('commenting_system_to_display');
     </div>
 
     <!-- Comments list container -->
-    <?php if ($display_commenting_system == 'native'): ?>
-        <?php
-            $numOfComments = get_comments_number();
-            if ($numOfComments > 0):
-        ?>
-    <div class="md:w-7/12 md:mx-auto flex flex-col">
-        <div class="flex flex-col bg-slate-50 dark:bg-gray-950">
-            <div class="flex flex-row gap-3">
-                <div>
-                    <div class="h-5 my-3 border-l-2 border-l-rose-500">
-                    </div>
-                </div>
-                <div>
-                    <div class="mt-2 mb-2">
-                        <h2 class="font-saira font-bold text-xl dark:text-gray-200">
-                            <?php
-                                echo esc_html($numOfComments);
-                                if ($numOfComments > 1) _e(' comments', 'ink'); else _e(' comment', 'ink');
-                            ?>
-                        </h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="flex flex-col mx-4 mb-4 space-y-10">
-                <?php function comments_walker() {?>
-                <figure class="flex flex-col" id="comment-<?php comment_ID(); ?>">
-                    <div class="flex flex-row gap-4 mb-4">
-                        <div>
-                            <?php
-                                $authorEmail = get_comment_author_email();
-                                $gravatar = get_avatar($authorEmail);
-                                $gravatarUrl = esc_url(home_url() . '/wp-content/themes/ink/resources/img/gravatar_400x400.png');
-
-                                if ($gravatar) $gravatarUrl = $gravatar;
-                            ?>
-                            <img class="w-14 h-14" src="<?php echo $gravatarUrl ?>" alt="" width="60" height="60">
-                        </div>
-                        <figcaption>
-                            <div class="flex flex-col dark:text-gray-300 font-sarabun">
-                                <div>
-                                    <p><?php echo get_comment_author(); ?></p>
-                                </div>
-                                <div class="flex flex-row gap-5">
-                                    <span><?php echo get_comment_date(); ?></span>
-                                </div>
-                            </div>
-                        </figcaption>
-                    </div>
-
-                    <!-- For comment -->
-                    <div class="mb-4 dark:text-gray-300">
-                        <p>
-                            <?php echo get_comment_text(); ?>
-                        </p>
-                    </div>
-                    <!-- End of for comment -->
-
-                    <?php
-                        comment_reply_link([
-                            'add_below' => true,
-                            'depth' => 20,
-                            'max_depth' => 200,
-                        ]);
-                    ?> 
-                </figure>
-                <?php } ?>
-                
-                <?php
-                    $comments = get_comments([
-                        'post_id' => get_the_ID(),
-                    ]);
-
-                    wp_list_comments([
-                        'type' => 'comment',
-                        'reverse_top_level' => true,
-                        'max_depth' => 20,
-                        'callback' => 'comments_walker',
-                    ], $comments);
-                ?>
-            </div>
-        </div>
-    </div>
-    <?php endif; ?>
+    <?php
+        if ($display_commenting_system == 'native'):
+            if (comments_open() || get_comments_number()):
+                comments_template();
+            endif;
+    ?>
     <!-- End of comments list container -->
 
     <!-- Comments Form -->
