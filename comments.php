@@ -40,7 +40,7 @@ if (post_password_required()) {
                     <div>
                         <?php
                             $authorEmail = get_comment_author_email();
-                            $gravatar = get_avatar($authorEmail, 60);
+                            $gravatar = get_avatar($authorEmail, 60, '', 'avatar placeholder image', ['class' => 'w-14 h-14']);
                             $gravatarUrl = esc_url(home_url() . '/wp-content/themes/ink/resources/img/gravatar_400x400.png');
                         ?>
                         <?php if ($gravatar):
