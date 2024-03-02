@@ -14,6 +14,7 @@ if (post_password_required()) {
 ?>
 <div class="md:w-7/12 md:mx-auto flex flex-col">
     <div class="flex flex-col bg-slate-50 dark:bg-gray-950">
+        <?php if ($numOfComments = get_comments_number()): ?>
         <div class="flex flex-row gap-3">
             <div>
                 <div class="h-5 my-3 border-l-2 border-l-rose-500">
@@ -23,8 +24,6 @@ if (post_password_required()) {
                 <div class="mt-2 mb-2">
                     <h2 class="font-saira font-bold text-xl dark:text-gray-200">
                         <?php
-                            $numOfComments = get_comments_number();
-
                             echo number_format_i18n($numOfComments);
                             if ($numOfComments > 1) _e(' comments', 'ink'); else _e(' comment', 'ink');
                         ?>
@@ -32,6 +31,7 @@ if (post_password_required()) {
                 </div>
             </div>
         </div>
+        <?php endif; ?>
 
         <div class="flex flex-col mx-4 mb-4 space-y-10">
             <?php function comments_walker() {?>
