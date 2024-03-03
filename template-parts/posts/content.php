@@ -17,7 +17,7 @@
             <div class="flex flex-col">
                 <?php the_title('<h3 class="font-sarabun mt-5 font-extrabold text-lg text-left dark:text-gray-300 tracking-wide">', '</h3>'); ?>
 
-                <div class="text-base text-gray-900 dark:text-gray-300 line-clamp-4 mt-5">
+                <div class="text-base text-gray-900 dark:text-gray-300 line-clamp-4 mt-5" alt="Read More">
                 <?php the_excerpt(); ?>
                 </div>
             </div>

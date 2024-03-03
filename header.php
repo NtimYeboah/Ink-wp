@@ -34,7 +34,7 @@
                 <?php else: ?>
                 <div class="md:w-8/12 md:mx-auto flex flex-row justify-between items-center">
                 <?php endif; ?>
-                    <div class="basis-4/5 md:basis-4/12">
+                    <div class="basis-4/5 md:basis-4/12 truncate">
                         <?php
                             $custom_logo_id = get_theme_mod('custom_logo');
                             $logo = wp_get_attachment_image_src($custom_logo_id, 'full');
@@ -43,10 +43,10 @@
                         <?php if (has_custom_logo()): ?>
                             <a href="<?php esc_url(home_url()) ?>" class="font-mono font-bold dark:text-gray-400"><img src="<?php esc_url($logo[0]) ?>" alt="logo image"></a>
                         <?php else: ?>
-                            <a href="/" class="font-sarabun text-lg font-extrabold dark:text-gray-200"><?php bloginfo('name') ?></a>
+                            <a href="/" class="font-sarabun text-lg font-extrabold dark:text-gray-200" title="<?php bloginfo('name') ?>"><?php bloginfo('name') ?></a>
                         <?php endif; ?>
                     </div>
-                    <nav class="hidden md:block md:basis-4/12 basis-1/4">
+                    <nav class="hidden md:block md:basis-4/12 basis-1/4 overflow-scroll">
                         <ul class="flex justify-center gap-12 font-saira text-xl font-semibold">
                             <?php
                                 $path = ink_current_path();

@@ -333,8 +333,28 @@
 .overflow-auto {
     overflow: auto;
 }
+.overflow-hidden {
+    overflow: hidden;
+}
+.overflow-clip {
+    overflow: clip;
+}
+.overflow-scroll {
+    overflow: scroll;
+}
 .scroll-smooth {
     scroll-behavior: smooth;
+}
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.overflow-ellipsis {
+    text-overflow: ellipsis;
+}
+.text-ellipsis {
+    text-overflow: ellipsis;
 }
 .rounded-full {
     border-radius: 9999px;
@@ -710,24 +730,6 @@ body {
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
     }
-    .md\:line-clamp-3 {
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 3;
-    }
-    .md\:line-clamp-4 {
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 4;
-    }
-    .md\:line-clamp-5 {
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 5;
-    }
     .md\:block {
         display: block;
     }
@@ -802,12 +804,6 @@ body {
     }
 }
 @media (min-width: 960px) {
-    .lg\:line-clamp-2 {
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
-    }
     .lg\:hidden {
         display: none;
     }

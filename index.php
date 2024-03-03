@@ -147,7 +147,6 @@ $display_sidebar = get_theme_mod('sidebar_display');
 
     <?php
     $args = [
-        'tag' => 'article',
         'posts_per_page' => 4
     ];
     

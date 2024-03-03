@@ -4,13 +4,13 @@
     <footer class="bg-black p-5">
             <div class="container pl-4 pr-4 sm:pl-4 sm:pr-4 md:mx-auto">
                 <div class="flex flex-row justify-start">
-                    <div class="w-3/6 md:w-2/6 lg:w-4/12">
-                        <p class="text-slate-400 text-sm font-sarabun">&copy; <?php echo date_i18n('Y'); ?>
+                    <div class="w-3/6 md:w-2/6 lg:w-4/12 truncate">
+                        <p class="text-slate-400 text-sm font-sarabun" title="<?php bloginfo('name') ?>">&copy; <?php echo date_i18n('Y'); ?>
                             <a href="<?php echo esc_url(home_url()); ?>"><?php bloginfo('name') ?></a>
                         </p>
                     </div>
                     <div class="hidden md:block md:w-2/6 lg:w-4/12">
-                        <ul class="flex justify-between gap-1 md:gap-0 lg:justify-center lg:gap-16">
+                        <ul class="flex justify-between gap-1 md:gap-0 lg:justify-center lg:gap-16 overflow-scroll">
                             <?php
                                 $menu_items = ink_get_nav_menu_items('footer');
 
