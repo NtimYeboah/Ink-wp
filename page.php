@@ -15,7 +15,11 @@ get_header();
         list($path, $fragmants) = explode('/', $path);
     }
 
-    get_template_part('template-parts/pages/content', $path);
+    if (file_exists(get_stylesheet_directory() . '/templage-parts/pages/content-' . $path)) {
+        get_template_part('template-parts/pages/content', $path);
+    } else {
+        get_template_part('template-parts/pages/content', 'default');
+    }
 ?>
 
 <?php

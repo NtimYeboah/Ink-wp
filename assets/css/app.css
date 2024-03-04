@@ -1031,12 +1031,6 @@ select{
 .overflow-auto{
     overflow: auto;
 }
-.overflow-hidden{
-    overflow: hidden;
-}
-.overflow-clip{
-    overflow: clip;
-}
 .overflow-scroll{
     overflow: scroll;
 }
@@ -1047,12 +1041,6 @@ select{
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-}
-.overflow-ellipsis{
-    text-overflow: ellipsis;
-}
-.text-ellipsis{
-    text-overflow: ellipsis;
 }
 .rounded-full{
     border-radius: 9999px;

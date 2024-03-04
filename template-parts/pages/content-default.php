@@ -1,44 +1,20 @@
 <?php
-get_header();
-
-$display_commenting_system = get_theme_mod('commenting_system_to_display');
+/**
+ * The template for displaying a page.
+ */
 ?>
-
 <!-- Main content -->
 <section class="min-h-screen container px-4 sm:pl-4 sm:pr-4 md:mx-auto mt-10">
     <!-- Main content container -->
     <div class="md:w-7/12 md:mx-auto flex flex-col mb-5">
-        <div class="flex justify-center mb-10">
-            <?php
-                the_title('<h1 class="font-sarabun text-2xl font-extrabold text-slate-900 dark:text-gray-300">', '</h1>');
-            ?>
-        </div>
-        <?php
-            $category_slug = '';
-            $categories = get_the_category();
-
-            if (count($categories) > 0):
-        ?>
-        <div class="flex justify-center gap-5">
-            <?php foreach ($categories as $category):
-                $category_slug .= $category->slug . ',';
-            ?>
-            <span class="text-base font-bold text-gray-600 dark:text-gray-400"><?php echo $category->name; ?></span>
-            <?php endforeach; ?>
-        </div>
-        <?php endif; ?>
-
-        <div class="flex justify-center gap-5 mt-5">
-            <span class="text-base font-normal text-gray-600 dark:text-gray-400"><?php the_time('m.d.Y')?></span>
-        </div>
-
+        
         <?php if (has_post_thumbnail()): ?>
         <div class="flex justify-center">
-            <img class="rounded-md w-full md:h-96 object-cover object-center mt-10" src="<?php echo esc_url(the_post_thumbnail_url()); ?>" alt="feature-image">
+            <img class="rounded-md w-full md:h-96 object-cover object-center" src="<?php echo esc_url(the_post_thumbnail_url()); ?>" alt="feature-image">
         </div>
         <?php endif; ?>
 
-        <div id="content" class="mt-10 text-lg dark:text-gray-300 mb-10">
+        <div id="content" class="text-lg dark:text-gray-300 mb-10">
             <?php the_content(); ?>
         </div>
 
@@ -100,10 +76,5 @@ $display_commenting_system = get_theme_mod('commenting_system_to_display');
     <!-- End of comments form -->
     <?php endif; ?>
 
-    <?php get_sidebar('related-articles'); ?>
-
 </section>
 <!-- End of main content -->
-
-<?php
-get_footer();
