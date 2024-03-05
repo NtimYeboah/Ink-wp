@@ -46,6 +46,7 @@ get_header();
                 <a href="<?php echo esc_url(get_permalink()) ?>" class="">
                     <div class="flex flex-col md:flex-row">
                         <div class="flex flex-col basis-1/3">
+                            <?php if (has_post_thumbnail()): ?>
                             <picture>
                                 <img 
                                     class="w-full object-cover object-center md:h-32 h-28"
@@ -53,6 +54,7 @@ get_header();
                                     alt=""
                                 >
                             </picture>
+                            <?php endif; ?>
                         </div>
                         <div class="flex flex-col px-4 basis-2/3">
                             <div class="flex flex-col">
