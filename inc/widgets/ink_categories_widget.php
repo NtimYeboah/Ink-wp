@@ -38,7 +38,7 @@ class Ink_Categories_Widget extends WP_Widget
             <div class="flex flex-col mx-4 mb-4">
                 <div class="flex flex-col">
                     <?php foreach ($categories as $category): ?>
-                        <a href="<?php echo esc_url(home_url('articles/category/' . $category->slug)); ?>" class="hover:underline text-base font-medium capitalize">
+                        <a href="<?php echo esc_url(home_url('category/' . $category->slug)); ?>" class="hover:underline text-base font-medium capitalize">
                             <span class="dark:text-gray-300 dark:hover:underline"><?php echo $category->name; ?></span>
                             <span class="text-gray-500 dark:text-gray-400">[<?php echo $category->count; ?>]</span>
                         </a>

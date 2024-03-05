@@ -38,7 +38,7 @@ class Ink_Tags_Widget extends WP_Widget
             <div class="flex flex-row mx-4 mb-2 font-sarabun flex-wrap dark:text-gray-300">
                 <?php foreach ($tags as $tag): ?>
                     <div class="mb-5 mr-2">
-                        <a href="<?php echo esc_url(home_url('articles/tag/' . $tag->slug)); ?>" class="border px-2 pt-1 pb-2"><?php echo $tag->name; ?></a>
+                        <a href="<?php echo esc_url(home_url('tag/' . $tag->slug)); ?>" class="border px-2 pt-1 pb-2"><?php echo $tag->name; ?></a>
                     </div>
                 <?php endforeach; ?>
             </div>

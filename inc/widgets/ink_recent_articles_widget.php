@@ -15,7 +15,6 @@ class Ink_Recent_Articles_Widget extends WP_Widget
     public function widget($args, $instance)
     {
         $recent_articles = new WP_Query([
-            'tag' => 'article',
             'posts_per_page' => 3
         ]); ?>
 
@@ -46,16 +45,15 @@ class Ink_Recent_Articles_Widget extends WP_Widget
                     <a id="recent-article-<?php the_ID(); ?>" href="<?php echo esc_url(get_permalink()); ?>" class="">
                         <div class="flex flex-col md:flex-row">
                             <div class="flex flex-col basis-1/3">
-                                <!-- Fix image height -->
+                                <?php if (has_post_thumbnail()): ?>
                                 <picture>
                                     <img 
                                         class="w-full object-cover object-center md:h-14 h-28" 
                                         src="<?php echo the_post_thumbnail_url(); ?>"
                                         alt=""
                                     >
-
-                                    <!-- <img class="w-full h-48 object-cover object-center mb-2" src="<?php echo the_post_thumbnail_url(); ?>" alt=""> -->
                                 </picture>
+                                <?php endif; ?>
                             </div>
                             <div class="flex flex-col px-4 basis-2/3">
                                 <div class="flex flex-col">
