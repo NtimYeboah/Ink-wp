@@ -5,9 +5,11 @@
  */
 get_header();
 
-$display_feature_article = get_theme_mod('featured_article_display');
+$display_sticky_article = get_theme_mod('sticky_article_display');
 $display_tips_and_snippet = get_theme_mod('tips_and_snippet_display');
 $display_sidebar = get_theme_mod('sidebar_display');
+
+$sticky_posts = get_option('sticky_posts');
 ?>
 
 <?php if ($display_sidebar == 1): ?>
@@ -43,110 +45,27 @@ $display_sidebar = get_theme_mod('sidebar_display');
     <?php endif; ?>
     <?php
 
-    if ($display_feature_article == 1):
+    if ($display_sticky_article == 1):
         $args = [
-            'tax_query' => [
-                [
-                    'taxonomy' => 'post_tag',
-                    'field' => 'slug',
-                    'terms' => ['featured']
-                ]
-            ]
+            'post_type' => 'post',
+            'post__in' => $sticky_posts,
         ];
-        $featured_article = new WP_Query($args);
 
-        if ($featured_article->have_posts()):
-    ?>
-    <div class="flex flex-col">
-        <!-- Featured Article -->
-        <div class="flex flex-col mb-5 bg-slate-50 dark:bg-gray-950">
-            <div class="flex flex-row gap-3">
-                <div>
-                    <div class="h-5 my-3 border-l-2 border-l-rose-500">
-                    </div>
-                </div>
-                <div>
-                    <div class="h-5 mt-2">
-                        <h2 class="font-saira font-bold text-xl dark:text-gray-200"><?php _e('Featured Article', 'ink'); ?></h2>
-                    </div>
-                </div>
-            </div>
-            <?php $featured_article->the_post(); ?>
-            <div class="hidden flex-row md:grid md:grid-cols-2 dark:hover:bg-slate-900 hover:bg-slate-100 md:gap-4 mx-4 mb-4 bg-50% bg-no-repeat bg-right" style="background-image: url('<?php echo the_post_thumbnail_url(); ?>')">
-                <article class="dark:hover:bg-slate-900 hover:bg-slate-100 mb-4">
-                    <a id="feature-article-<?php the_ID(); ?>" href="<?php echo esc_url(get_permalink()); ?>">
-                        <div class="flex flex-col px-4">
-                            <div class="flex flex-col text-lg text-gray-900 dark:text-gray-300">
-                                <?php the_title('<h3 class="font-sarabun mt-5 font-extrabold text-2xl text-left dark:text-gray-300 tracking-wide">', '</h3>'); ?>
-                                <div class="line-clamp-6 mt-5">
-                                    <?php the_excerpt(); ?>
-                                </div>
-                            </div>
-                            <div class="flex flex-row py-4 gap-2 justify-left">
-                                <div>
-                                    <p class="inline-flex text-gray-600 text-sm font-semibold dark:text-gray-400"><?php echo the_time('m.d.Y'); ?></p>
-                                </div>
-                                <?php $cats = get_the_category(); ?>
-                                <?php if (count($cats) > 0): ?>
-                                <div>
-                                    <span class="font-semibold text-gray-500 dark:text-gray-400">|</span>
-                                </div>
-                                <div>
-                                    <p class="inline-flex text-gray-600 text-sm font-semibold dark:text-gray-400 uppercase"><?php echo $cats[0]->name; ?></p>
-                                </div>
-                                <?php endif; ?>
-                            </div>
-                        </div>
-                    </a>
-                </article>
-            </div>
+        $sticky_article = new WP_Query($args);
 
-            <div class="md:hidden flex flex-col mx-4 mb-2">
-                <article class="dark:hover:bg-slate-900 hover:bg-slate-100 mb-4">
-                    <a href="<?php echo esc_url(get_permalink()); ?>">
-                        <div class="flex-col">
-                            <picture>
-                                <img class="w-full h-48 object-cover object-center mb-2" src="<?php echo the_post_thumbnail_url(); ?>" alt="">
-                            </picture>
-                        </div>
-                        <div class="flex flex-col px-4">
-                            <div class="flex flex-col text-gray-900 dark:text-gray-300">
-                                <?php the_title('<h3 class="font-sarabun mt-5 font-extrabold text-lg text-left dark:text-gray-300 tracking-wide">', '</h3>'); ?>
-
-                                <p class="text-base text-gray-900 dark:text-gray-300 line-clamp-4 mt-5">
-                                    <?php the_excerpt(); ?>
-                                </p>
-                            </div>
-                            <div class="flex flex-row py-4 gap-2 justify-left">
-                                <div>
-                                    <p class="inline-flex text-gray-600 text-xs font-semibold dark:text-gray-400"><?php echo the_time('m.d.Y'); ?></p>
-                                </div>
-                                <?php $cats = get_the_category(); ?>
-                                <?php if (count($cats) > 0): ?>
-                                <div>
-                                    <span class="font-semibold text-gray-500 dark:text-gray-400">|</span>
-                                </div>
-                                <div>
-                                    <p class="inline-flex text-gray-600 text-xs font-semibold dark:text-gray-400 uppercase"><?php echo $cats[0]->name; ?></p>
-                                </div>
-                                <?php endif; ?>
-                            </div>
-                        </div>
-                    </a>
-                </article>
-            </div>
-        </div>
-        <!-- End of featured article -->
-    </div>
-    <?php
-    endif;
+        if ($sticky_article->have_posts()):
+            $sticky_article->the_post();
+            get_template_part('template-parts/posts/content', 'sticky');
         endif;
+    endif;
 
-        wp_reset_postdata();
+    wp_reset_postdata();
     ?>
 
     <?php
     $args = [
+        'post_type' => 'post',
+        'post__not_in' => $sticky_posts,
         'posts_per_page' => 4
     ];
     

@@ -118,16 +118,16 @@ class Ink_Customizer
 
     private function ink_homepage_section($wp_customize)
     {
-        // Featured article setting
-        $wp_customize->add_setting('featured_article_display', array(
-            'default' => 'No',
+        // Sticky article setting
+        $wp_customize->add_setting('sticky_article_display', array(
+            'default' => 'Yes',
             'sanitize_callback' => array($this, 'sanitize_select_type')
         ));
 
-        $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'featured_article_display_control', array(
-            'label' => __('Display featured article'), // Label to be displayed for the control
+        $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'sticky_article_display_control', array(
+            'label' => __('Display sticky article'), // Label to be displayed for the control
             'section' => 'static_front_page', // The section name specified in a.
-            'settings' => 'featured_article_display', // The setting name specified in b.
+            'settings' => 'sticky_article_display', // The setting name specified in b.
             'type' => 'select',
             'choices' => array(
                 'No' => __('No'),
@@ -138,7 +138,7 @@ class Ink_Customizer
 
         // Tips & snippet setting
         $wp_customize->add_setting('tips_and_snippet_display', array(
-            'default' => 'No',
+            'default' => 'Yes',
             'sanitize_callback' => array($this, 'sanitize_select_type')
         ));
 
@@ -156,7 +156,7 @@ class Ink_Customizer
 
         // Sidebar setting
         $wp_customize->add_setting('sidebar_display', array(
-            'default' => 'No',
+            'default' => 'Yes',
             'sanitize_callback' => array($this, 'sanitize_select_type')
         ));
 
