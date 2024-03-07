@@ -12,8 +12,8 @@ Captivate your readers with Ink, Wordpress theme crafted to showcase your writin
 - Light and dark mode options.
 
 ## Setup
-Ink needs a least 3 pages to work. There pages are Articles, Projects and About pages.
-Articles will display a list of all your articles, project page will display projects you have undertaken and about page display information about the blog owner.
+Ink needs at least 3 pages to work. These pages are Articles, Projects and About.
+Articles will display a list of all your articles, project page will display projects you have undertaken and about page will display information about the blog owner.
 
 ### Pages
 We will create three (3) pages which are Article, Projects and About. Let's head over to Pages in the Admin to create these pages.
@@ -43,22 +43,22 @@ To create menu head over to the Admin dashboard, Appearance > Menus.
 
 
 ### Posts
-Posts are the heart of our website. For the basic, we are goint to create four (4) posts to get us going.
-Posts must be given a tag of **“article”** or **“tip”**.
-Posts having the tag of **articles** will be displayed in the Latest Articles section of the homepage.
-Likewise posts having a tag of **tip** will be displayed in the Tips & Snippets section of the homepage. Let’s create 4 posts, 2 for article tag and 2 for tip tag.
+Posts are the heart of our website. For the basic, we are going to create four (4) posts to get us going.
+Sticky post will be displayed on the Featured Article section of the homepage.
+Posts having a tag of **tip** will be displayed in the Tips & Snippets section of the homepage and
+all other posts will be displayed in the Latest Articles section.
+Let’s create 4 posts, 2 articles having a "tip" tag and the rest having no tag.
 
 **Creating Posts**
 To create posts head over to the Admin dashboard, Posts > Add New Post.
 
-Create article having "article" tag.
+Create articles.
 - Give the post a title and write out the contents of the post.
-- Most importantly assign a tag of **article** for the post.
 - Assign a category for the post.
 - You can optionally upload a featured image for the post.
 - Publish the post.
 
-Create article having "tip" tag.
+Create articles having "tip" tag.
 - Give the post a title and write out the contents of the post.
 - Most importantly assign a tag of **tip** for the post.
 - Assign a category for the post.
@@ -69,9 +69,9 @@ Create article having "tip" tag.
 
 ### Sidebar
 There are three (3) sidebars included in Ink. These are;
-1. Main sidebar that will display widgets on the homepage.
-2. The Related articles sidebar that will display related articles widget on the articles details page.
-3. The Footer sidebar that will display any widget assign to the footer.
+1. Main sidebar that displays widgets on the homepage.
+2. The Related articles sidebar displays related articles widget on the articles details page.
+3. The Footer sidebar displays any widget assign to the footer.
 
 ### Widgets
 Sidebars need widgets that they can display.
@@ -82,10 +82,10 @@ These are;
 3. Ink Tags Widget and
 4. Ink Categories Widget
 
-A single widget that can be added to the Related article sidebar. This is;
+A single widget can be added to the Related article sidebar. This is;
 1. Ink Related Articles Widget
 
-Head over the Admin dashboard, Appearance > Widgets.
+Head over to the Admin dashboard, Appearance > Widgets.
 
 **Adding Widgets to Main Sidebar**
 - Click on the + container in Main Sidebar and type “ink” in the search box.
@@ -98,17 +98,20 @@ Head over the Admin dashboard, Appearance > Widgets.
 - Select Ink Related Articles Widget. The title is optional.
 - Publish the sidebar.
 
+**At this point you can view all the sidebars by navigating to the homepage**
+
 ### Customizations
 You can customize Ink to make it yours. Ink comes with customisation that can take you from Minimalist to Elaborate. The customization can be done to the Homepage, Article details page and the About page.
 
 **Homepage**
-The Homepage can be customized to fit your needs. You can go as Minimal as displaying only Latest Articles and Elaborate as displaying Featured Articles, Latest Articles, Tips and Snippets, and the Main Side which displays all the widgets.
+The Homepage can be customized to fit your needs. You can go as Minimal as displaying only Latest Articles and Elaborate as displaying Featured Article, Latest Articles, Tips and Snippets, and the Main Side which displays all the widgets.
 
 To customize the Homepage, go to the Admin dasbhaord, Appearance > Customize > Homepage Settings.
 
 Under this customization, you can optionally display the Featured Article container, Tips and Snippets container, and the Main Sidebar.
 
-In order to display the Featured Article, you need to add a “**featured**” tag to any post you wish to set as the featured article.
+In order to display the Featured Article, you need to make one of your posts a **sticky** post.
+[Show a gif of making a post sticky]
 
 You can optionally display any of these containers to come up with your unique Homepage appearance.
 [Show a gif of customizing the Homepage]
@@ -119,6 +122,7 @@ The article details page displays an article’s content including the featured 
 To customize the Article Details Page, go to the Admin dasbhaord, Appearance > Customize > Article Details Page Settings.
 
 Under this customization, you can choose wordpress commenting system or Giscus under "Choose commenting system" option. [Giscus](https://giscus.app/) is a commenting system powered by Github Discussions.
+[Show a gif of choosing a commenting system]
 
 **Using Giscus commenting system**
 When you opt in for Giscus, you need to provide Giscus script to make Giscus work on the article details page. You have to paste Giscus script into the "Add Giscus script" textarea. The script should be similar to this
@@ -142,7 +146,7 @@ When you opt in for Giscus, you need to provide Giscus script to make Giscus wor
 Click Publish when done. You should see Github's comment form under your article.
 
 **About Page**
-The About Page gives information about the owner of this website. These information include a brief summary about you, your picture, contact information, Education and certifications and work experience. 
+The About Page gives information about the owner of this website. These information include a brief summary, a picture, contact information, Education and certifications, and work experience. 
 
 To customize the Homepage, go to the Admin dasbhaord, Appearance > Customize > About Page Settings.
 
