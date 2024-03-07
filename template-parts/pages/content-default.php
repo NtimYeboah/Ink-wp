@@ -2,6 +2,7 @@
 /**
  * The template for displaying a page.
  */
+$display_commenting_system = get_theme_mod('commenting_system_to_display');
 ?>
 <!-- Main content -->
 <section class="min-h-screen container px-4 sm:pl-4 sm:pr-4 md:mx-auto mt-10">
