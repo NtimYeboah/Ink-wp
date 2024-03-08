@@ -29,13 +29,13 @@ class Ink_Customizer
         ));
 
         $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'contact_container_control', array(
-            'label' => __('Display contact'),
+            'label' => __('Display contact', 'ink'),
             'section' => 'about_page',
             'settings' => 'contact_container_setting',
             'type' => 'select',
             'choices' => array(
-                'No' => __('No'),
-                'Yes' => __('Yes')
+                'No' => __('No', 'ink'),
+                'Yes' => __('Yes', 'ink')
             ),
         )));
 
@@ -46,13 +46,13 @@ class Ink_Customizer
         ));
 
         $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'education_control', array(
-            'label' => __('Display education and certification'),
+            'label' => __('Display education and certification', 'ink'),
             'section' => 'about_page',
             'settings' => 'education_container_setting',
             'type' => 'select',
             'choices' => array(
-                'No' => __('No'),
-                'Yes' => __('Yes')
+                'No' => __('No', 'ink'),
+                'Yes' => __('Yes', 'ink')
             ),
         )));
 
@@ -63,13 +63,13 @@ class Ink_Customizer
         ));
 
         $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'work_experience_control', array(
-            'label' => __('Display work experience'),
+            'label' => __('Display work experience', 'ink'),
             'section' => 'about_page',
             'settings' => 'work_experience_container_setting',
             'type' => 'select',
             'choices' => array(
-                'No' => __('No'),
-                'Yes' => __('Yes')
+                'No' => __('No', 'ink'),
+                'Yes' => __('Yes', 'ink')
             ),
         )));
     }
@@ -90,13 +90,13 @@ class Ink_Customizer
         ));
 
         $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'choose_commenting_system_control', array(
-            'label' => __('Choose commenting system'),
+            'label' => __('Choose commenting system', 'ink'),
             'section' => 'article_details_page', // The section name specified in a.
             'settings' => 'commenting_system_to_display', // The setting name specified in b.
             'type' => 'radio',
             'choices' => array(
-                'native' => __('Native'),
-                'giscus' => __('Giscus'),
+                'native' => __('Native', 'ink'),
+                'giscus' => __('Giscus', 'ink'),
             ),
         )));
 
@@ -107,8 +107,8 @@ class Ink_Customizer
         ));
 
         $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'giscus_script_control', array(
-            'label' => __('Add Giscus Script'),
-            'description' => __('Add your Giscus script here.'),
+            'label' => __('Add Giscus Script', 'ink'),
+            'description' => __('Add your Giscus script here.', 'ink'),
             'section' => 'article_details_page',
             'settings' => 'giscus_script',
             'type' => 'textarea',
@@ -125,13 +125,13 @@ class Ink_Customizer
         ));
 
         $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'sticky_article_display_control', array(
-            'label' => __('Display sticky article'), // Label to be displayed for the control
+            'label' => __('Display sticky article', 'ink'), // Label to be displayed for the control
             'section' => 'static_front_page', // The section name specified in a.
             'settings' => 'sticky_article_display', // The setting name specified in b.
             'type' => 'select',
             'choices' => array(
-                'No' => __('No'),
-                'Yes' => __('Yes')
+                'No' => __('No', 'ink'),
+                'Yes' => __('Yes', 'ink')
             ),
         )));
 
@@ -143,13 +143,13 @@ class Ink_Customizer
         ));
 
         $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'tips_and_snippet_display_control', array(
-            'label' => __('Display tips & snippet'),
+            'label' => __('Display tips & snippet', 'ink'),
             'section' => 'static_front_page',
             'settings' => 'tips_and_snippet_display',
             'type' => 'select',
             'choices' => array(
-                'No' => __('No'),
-                'Yes' => __('Yes')
+                'No' => __('No', 'ink'),
+                'Yes' => __('Yes', 'ink')
             ),
         )));
 
@@ -161,13 +161,13 @@ class Ink_Customizer
         ));
 
         $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'sidebar_display_control', array(
-            'label' => __('Display sidebar'),
+            'label' => __('Display sidebar', 'ink'),
             'section' => 'static_front_page',
             'settings' => 'sidebar_display',
             'type' => 'select',
             'choices' => array(
-                'No' => __('No'),
-                'Yes' => __('Yes')
+                'No' => __('No', 'ink'),
+                'Yes' => __('Yes', 'ink')
             ),
         )));
     }
