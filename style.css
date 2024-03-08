@@ -3,8 +3,17 @@ Theme Name: Ink
 Theme URI: https://ntim.dev
 Author: Ntim Obed Yeboah
 Author URI: https://ntim.dev
-Description: This is a custom Wordpress theme for Ntim.dev blog
+Description: Captivate your readers with Ink, Wordpress theme crafted to showcase your writing. Whether you're a seasoned author or just starting out, Ink's unique homepage layouts provide the perfect platform to share your stories. This responsive theme seamlessly adapts to any device, ensuring your words reach readers on mobile, tablets, and desktops. And for added comfort, Ink offers both light and dark mode options, making reading a pleasure at any time of day. Let Ink help your writing shine!
 Version: 1.0.0
+Stable tag: 1.0.0
+Requires at least: 5.6
+Tested up to: 6.4
+Requires PHP: 7.4
 Text Domain: ink
-License: GPL v3
+License: GNU General Public License v3 or later.
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Tags: blog, two-columns, custom-background, custom-colors, full-width-template, custom-menu, custom-logo, featured-images, sticky-post, theme-options, threaded-comments, translation-ready
+
+Ink WordPress Theme, (C) 2024 ntim.dev
+Ink is distributed under the terms of the GNU GPL.
 */
