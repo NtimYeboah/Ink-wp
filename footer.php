@@ -32,7 +32,7 @@
                     <div class="w-3/6 md:w-2/6 lg:w-4/12">
                         <ul class="flex flex-row justify-end gap-6 md:gap-6">
                             <li>
-                                <a href="mailto:ntimobedyeboah@gmail.com" target="_blank" class="text-slate-400 font-medium py-4 hover:border-b-4 border-gray-300 dark:text-gray-400">
+                                <a href="#" target="_blank" class="text-slate-400 font-medium py-4 hover:border-b-4 border-gray-300 dark:text-gray-400">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 24 24"
@@ -51,7 +51,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.linkedin.com/in/ntimyeboah/" target="_blank" class="text-slate-400 font-medium py-4 hover:border-b-4 border-gray-300 dark:text-gray-400">
+                                <a href="#" target="_blank" class="text-slate-400 font-medium py-4 hover:border-b-4 border-gray-300 dark:text-gray-400">
                                     <svg
                                         fill="currentColor"
                                         xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +67,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/NtimYeboah" target="_blank" class="text-slate-400 font-medium py-4 hover:border-b-4 border-gray-300 dark:text-gray-400">
+                                <a href="#" target="_blank" class="text-slate-400 font-medium py-4 hover:border-b-4 border-gray-300 dark:text-gray-400">
                                     <svg
                                         fill="currentColor"
                                         xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +82,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://twitter.com/ntimdev" target="_blank" class="text-slate-400 font-medium py-4 hover:border-b-4 border-gray-300 dark:text-gray-400">
+                                <a href="#" target="_blank" class="text-slate-400 font-medium py-4 hover:border-b-4 border-gray-300 dark:text-gray-400">
                                     <svg
                                         fill="currentColor"
                                         xmlns="http://www.w3.org/2000/svg"
