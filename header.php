@@ -27,6 +27,13 @@
         </script>
     </head>
     <body <?php body_class('antialiased bg-white dark:bg-gray-900 scroll-smooth'); ?>>
+        <?php
+        if (function_exists('wp_body_open')) {
+            wp_body_open();
+        } else {
+            do_action('wp_body_open');
+        }
+        ?>
         <header class="py-4">
             <div class="container pl-4 pr-4 sm:pl-4 sm:pr-4 md:mx-auto">
                 <?php if (get_theme_mod('sidebar_display') == 1): ?>
