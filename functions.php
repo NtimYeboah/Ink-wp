@@ -54,10 +54,12 @@ if (! function_exists('ink_setup')) {
         // Add Post Type Support
         add_theme_support('post-formats', ['aside', 'gallery', 'link', 'image', 'quote', 'video', 'audio']);
 
-        add_theme_support( 'align-wide' );
-	    add_theme_support( 'wp-block-styles' );
-
-	    add_theme_support( 'editor-styles' );
+        add_theme_support('align-wide');
+	    add_theme_support('wp-block-styles');
+	    add_theme_support('editor-styles');
+        add_theme_support('responsive-embeds');
+        add_theme_support('custom-header', []);
+        add_theme_support('custom-background', []);
 
         // Register menu bars
         register_nav_menus([
