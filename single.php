@@ -10,7 +10,7 @@ $display_commenting_system = get_theme_mod('commenting_system_to_display');
     <div class="md:w-7/12 md:mx-auto flex flex-col mb-5">
         <div class="flex justify-center mb-10">
             <?php
-                the_title('<h1 class="font-sarabun text-2xl font-extrabold text-slate-900 dark:text-gray-300">', '</h1>');
+                the_title('<h1 class="font-sarabun text-2xl font-extrabold text-slate-900 dark:text-gray-300 flex-wrap">', '</h1>');
             ?>
         </div>
         <?php
