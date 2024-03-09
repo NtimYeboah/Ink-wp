@@ -87,6 +87,7 @@ class Ink_Customizer
         // Commenting system
         $wp_customize->add_setting('commenting_system_to_display', array(
             'default' => 'native',
+            'sanitize_callback' => array($this, 'sanitize_string_type')
         ));
 
         $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'choose_commenting_system_control', array(
@@ -104,6 +105,7 @@ class Ink_Customizer
         // Giscus text
         $wp_customize->add_setting('giscus_script', array(
             'default' => '',
+            'sanitize_callback' => array($this, 'sanitize_string_type')
         ));
 
         $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'giscus_script_control', array(
@@ -174,7 +176,11 @@ class Ink_Customizer
 
     public function sanitize_select_type($input) {
         return ($input === 'No') ? 0 : 1;
-    } 
+    }
+
+    public function sanitize_string_type($input) {
+        return strtolower($input);
+    }
 }
 
 new Ink_Customizer();
