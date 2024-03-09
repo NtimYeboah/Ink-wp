@@ -64,9 +64,6 @@ if (! function_exists('ink_setup')) {
             'primary' => esc_html__('Primary Menu', 'ink'),
             'footer' => esc_html__('Footer Menu', 'ink'),
         ]);
-
-        // Disable admin bar shown on top of the page when in development
-        add_filter('show_admin_bar', '__return_false');
     }
 }
 add_action('after_setup_theme', 'ink_setup');
@@ -186,7 +183,7 @@ if (! function_exists('ink_giscus_script')) {
             <?php
         }
     }
-}
+} // esc_js(get_theme_mod('giscus_script'));
 add_action('wp_footer', 'ink_giscus_script');
 
 if (! function_exists('ink_register_sidebars')) {

@@ -5,7 +5,7 @@
 ?>
 
 <article class="dark:hover:bg-slate-900 hover:bg-slate-100 mb-4">
-    <a id="post-<?php the_ID(); ?>" href="<?php echo esc_url(get_permalink()); ?>">
+    <a id="post-<?php the_ID(); ?>" <?php post_class(); ?> href="<?php echo esc_url(get_permalink()); ?>">
         <div class="flex-col">
             <?php if (has_post_thumbnail()): ?>
                 <picture>

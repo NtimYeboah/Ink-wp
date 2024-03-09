@@ -17,6 +17,13 @@ $display_commenting_system = get_theme_mod('commenting_system_to_display');
 
         <div id="content" class="text-lg dark:text-gray-300 mb-10">
             <?php the_content(); ?>
+
+            <?php
+            wp_link_pages([
+                'before' => '<div class="page-links">' . esc_html__('Pages:', 'ink'),
+                'after' => '</div>'
+            ]);
+            ?>
         </div>
 
         <?php if ($display_commenting_system == 'giscus'): ?>
