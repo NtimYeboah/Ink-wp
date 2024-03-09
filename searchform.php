@@ -1,6 +1,11 @@
 <form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>">
     <div class="flex flex-row w-full">
-        <input type="search" name="s" value="<?php echo get_search_query(); ?>" placeholder="Type search term" class="w-full form-input border-r-0 dark:bg-gray-900 dark:text-gray-300">
+        <input
+            type="search"
+            name="s"
+            value="<?php echo get_search_query(); ?>"
+            placeholder="Type search term"
+            class="w-full form-input border-r-0 dark:bg-gray-900 dark:text-gray-300">
         <button
             type="submit"
             class="bg-slate-600 hover:bg-slate-700 p-2"
