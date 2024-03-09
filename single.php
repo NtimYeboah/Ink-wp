@@ -49,7 +49,7 @@ $display_commenting_system = get_theme_mod('commenting_system_to_display');
             ?>
         </div>
 
-        <div class="flex flex-row mb-2 font-sarabun flex-wrap dark:text-gray-300">
+        <div class="flex flex-row mb-5 font-sarabun flex-wrap dark:text-gray-300">
             <?php
                 $tags = get_the_tags();
                 
