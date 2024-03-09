@@ -942,6 +942,9 @@ select{
 .w-6{
     width: 1.5rem;
 }
+.w-6\/12{
+    width: 50%;
+}
 .w-60{
     width: 15rem;
 }
@@ -1004,6 +1007,12 @@ select{
 }
 .justify-between{
     justify-content: space-between;
+}
+.justify-evenly{
+    justify-content: space-evenly;
+}
+.justify-stretch{
+    justify-content: stretch;
 }
 .gap-1{
     gap: 0.25rem;
@@ -1130,6 +1139,9 @@ select{
 .object-center{
     -o-object-position: center;
        object-position: center;
+}
+.p-10{
+    padding: 2.5rem;
 }
 .p-2{
     padding: 0.5rem;
@@ -1283,6 +1295,10 @@ select{
 .text-white{
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.text-gray-300{
+    --tw-text-opacity: 1;
+    color: rgb(209 213 219 / var(--tw-text-opacity));
 }
 .underline{
     text-decoration-line: underline;

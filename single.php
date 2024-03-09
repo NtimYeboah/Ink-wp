@@ -65,6 +65,16 @@ $display_commenting_system = get_theme_mod('commenting_system_to_display');
             ?>
         </div>
 
+        <div class="flex justify-between p-5 flex-col md:flex-row bg-slate-50 dark:bg-gray-950 mb-5">
+            <div class="flex flex-row w-6/12 dark:text-gray-300 justify-start">
+                <?php echo previous_post_link(); ?>
+            </div>
+
+            <div class="flex flex-row w-6/12 dark:text-gray-300 justify-end">
+                <?php echo next_post_link(); ?>
+            </div>
+        </div>
+
         <?php if ($display_commenting_system == 'giscus'): ?>
         <!-- Giscus comments section -->
         <div class="giscus mb-10">
