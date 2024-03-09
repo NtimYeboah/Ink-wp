@@ -19,7 +19,7 @@ $display_commenting_system = get_theme_mod('commenting_system_to_display');
 
             if (count($categories) > 0):
         ?>
-        <div class="flex justify-center gap-5">
+        <div class="flex justify-center gap-5 flex-wrap">
             <?php foreach ($categories as $category):
                 $category_slug .= $category->slug . ',';
             ?>
@@ -49,6 +49,22 @@ $display_commenting_system = get_theme_mod('commenting_system_to_display');
             ?>
         </div>
 
+        <div class="flex flex-row mb-2 font-sarabun flex-wrap dark:text-gray-300">
+            <?php
+                $tags = get_the_tags();
+                
+                if ($tags):
+                    foreach ($tags as $tag):
+            ?>
+                <div class="mb-5 mr-2">
+                    <a href="<?php echo esc_url(home_url('tag/' . $tag->slug)); ?>" class="border px-2 pt-1 pb-2"><?php echo $tag->name; ?></a>
+                </div>
+            <?php
+                    endforeach;
+                endif;
+            ?>
+        </div>
+
         <?php if ($display_commenting_system == 'giscus'): ?>
         <!-- Giscus comments section -->
         <div class="giscus mb-10">
@@ -67,7 +83,7 @@ $display_commenting_system = get_theme_mod('commenting_system_to_display');
     <!-- End of comments list container -->
 
     <!-- Comments Form -->
-    <div class="md:w-7/12 md:mx-auto flex flex-col mb-5">
+    <div class="md:w-7/12 md:mx-auto flex flex-col mb-10">
         <div class="flex flex-col bg-slate-50 dark:bg-gray-950">
             <div class="flex flex-row gap-3">
                 <div>
